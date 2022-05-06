@@ -26,7 +26,9 @@ inputs:
   sftp_only:
     description: 'connection via sftp protocol only'
     required: false
-    default: false
+  exclude:
+    description: 'exclude path'
+    required: true
 
   args:
     description: 'sftp args'
@@ -45,6 +47,7 @@ runs:
     - ${{ inputs.remote_path }}
     - ${{ inputs.sftp_only }}
     - ${{ inputs.args }}
+    - ${{ inputs.exclude }}
 
 branding:
   icon: 'upload-cloud'  
