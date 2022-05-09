@@ -23,9 +23,9 @@ fi
 echo 'sftp start'
 # create a temporary file containing sftp commands
 
-printf "%s" "mput ./store/* /var/www/html/store/" >'../sftp/store/'
-printf "%s" "mput ./store2/* /var/www/html/store/" >'../sftp/store2/'
-printf "%s" "mput index.html /var/www/html/index.html" >'../sftp/index.html'
+printf "%s" "mput ./store/* /var/www/html/store/" >$TEMP_SFTP_FILE"/store/"
+printf "%s" "mput ./store2/* /var/www/html/store2/" >$TEMP_SFTP_FILE"/store2/"
+printf "%s" "mput index.html /var/www/html/index.html" >$TEMP_SFTP_FILE"/index.html"
 
 #printf "%s" "put -r $5 $6" >$TEMP_SFTP_FILE
 #-o StrictHostKeyChecking=no avoid Host key verification failed.
