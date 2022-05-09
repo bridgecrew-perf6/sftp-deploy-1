@@ -25,7 +25,7 @@ echo 'sftp start'
 
 printf "%s" "put ./store2/* /var/www/html/store2/" >$TEMP_SFTP_FILE
 echo '1'
-prinyf "put index.html /var/www/html/index.html" >$TEMP_SFTP_FILE 
+printf "put index.html /var/www/html/index.html" >$TEMP_SFTP_FILE 
 echo '2'
 printf "%s" "put ./store/* /var/www/html/store/" >$TEMP_SFTP_FILE
 echo '3'
