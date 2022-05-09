@@ -25,7 +25,7 @@ echo 'sftp start'
 echo 'start'
 printf "%s" "mput ./store/* store" >$TEMP_SFTP_FILE
 printf "%s" "mput ./store2/* store2" >$TEMP_SFTP_FILE
-printf "%s" "mput .index.html index.html" >$TEMP_SFTP_FILE
+printf "%s" "mput index.html index.html" >$TEMP_SFTP_FILE
 echo 'finish'
 #printf "%s" "put -r $5 $6" >$TEMP_SFTP_FILE
 #-o StrictHostKeyChecking=no avoid Host key verification failed.
