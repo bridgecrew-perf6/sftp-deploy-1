@@ -6,9 +6,6 @@ set -eu
 
 TEMP_SSH_PRIVATE_KEY_FILE='../private_key.pem'
 TEMP_SFTP_FILE='../sftp'
-TEMP_SFTP_STORE='../store/'
-TEMP_SFTP_STORE2='../store2/'
-TEMP_SFTP_INDEX='../'
 
 # keep string format
 printf "%s" "$4" >$TEMP_SSH_PRIVATE_KEY_FILE
@@ -26,13 +23,18 @@ fi
 echo 'sftp start'
 # create a temporary file containing sftp commands
 
-printf "%s" "put ./store2/* /var/www/html/store2/" >$TEMP_SFTP_STORE2
-printf "%s" "put index.html /var/www/html/index.html" >$TEMP_SFTP_INDEX 
-printf "%s" "put ./store/* /var/www/html/store/" >$TEMP_SFTP_STORE
+printf "%s" "put ./store2/* /var/www/html/store2/" >$TEMP_SFTP_FILE
+sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
+
+printf "%s" "put index.html /var/www/html/index.html" >$TEMP_SFTP_FILE 
+sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
+
+printf "%s" "put ./store/* /var/www/html/store/" >$TEMP_SFTP_FILE
+sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
+
 
 #printf "%s" "put -r $5 $6" >$TEMP_SFTP_FILE
 #-o StrictHostKeyChecking=no avoid Host key verification failed.
-sftp -b $TEMP_SFTP_INDEX TEMP_SFTP_STORE2 TEMP_SFTP_STORE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
 echo 'deploy success'
 exit 0
