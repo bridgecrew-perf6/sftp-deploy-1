@@ -23,10 +23,9 @@ fi
 echo 'sftp start'
 # create a temporary file containing sftp commands
 
-"%s" "mput ./store/* store"
-"%s" "mput ./store2/* store2"
-"%s" "mput .index.html index.html"
-"%s" "mput .README.md README.md"
+printf "%s" "mput ./store/* store"
+printf "%s" "mput ./store2/* store2"
+printf "%s" "mput .index.html index.html"
 #printf "%s" "put -r $5 $6" >$TEMP_SFTP_FILE
 #-o StrictHostKeyChecking=no avoid Host key verification failed.
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
