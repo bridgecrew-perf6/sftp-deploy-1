@@ -22,14 +22,14 @@ fi
 
 echo 'sftp start'
 # create a temporary file containing sftp commands
-echo 'start'
-printf "%s" "mput ./store/* store" >$TEMP_SFTP_FILE
-printf "%s" "mput ./store2/* store2" >$TEMP_SFTP_FILE
-printf "%s" "mput index.html index.html" >$TEMP_SFTP_FILE
-echo 'finish'
+#echo 'start'
+#printf "%s" "mput ./store/* store" >$TEMP_SFTP_FILE
+#printf "%s" "mput ./store2/* store2" >$TEMP_SFTP_FILE
+#printf "%s" "mput index.html index.html" >$TEMP_SFTP_FILE
+#echo 'finish'
 
-sftp mput ./store/* store
-sftp mput index.html index.html
+mput ./store/* store
+mput index.html index.html
 #printf "%s" "put -r $5 $6" >$TEMP_SFTP_FILE
 #-o StrictHostKeyChecking=no avoid Host key verification failed.
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
