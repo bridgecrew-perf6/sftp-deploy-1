@@ -23,8 +23,12 @@ fi
 echo 'sftp start'
 # create a temporary file containing sftp commands
 
-printf "%s" "put ./store2/* /var/www/html/store2/" >$TEMP_SFTP_FILE "put index.html /var/www/html/index.html" >$TEMP_SFTP_FILE 
-#printf "%s" "put ./store/* /var/www/html/store/" >$TEMP_SFTP_FILE
+printf "%s" "put ./store2/* /var/www/html/store2/" >$TEMP_SFTP_FILE
+echo '1'
+prinyf "put index.html /var/www/html/index.html" >$TEMP_SFTP_FILE 
+echo '2'
+printf "%s" "put ./store/* /var/www/html/store/" >$TEMP_SFTP_FILE
+echo '3'
 
 #printf "%s" "put -r $5 $6" >$TEMP_SFTP_FILE
 #-o StrictHostKeyChecking=no avoid Host key verification failed.
