@@ -22,12 +22,12 @@ fi
 
 echo 'sftp start'
 # create a temporary file containing sftp commands
-printf "%s" "put -r $5 $6" >$TEMP_SFTP_FILE
+degi1 = "%s" "put -r $5 $6" >$TEMP_SFTP_FILE
+printf degi1
 #-o StrictHostKeyChecking=no avoid Host key verification failed.
-echo StrictHostKeyChecking
-echo TEMP_SSH_PRIVATE_KEY_FILE
-echo sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
-sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
+degi = sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
+echo degi1
+echo degi
 
 echo 'deploy success'
 exit 0
