@@ -23,8 +23,8 @@ fi
 echo 'sftp start'
 # create a temporary file containing sftp commands
 
-printf "%s" "mput ./store/* /var/www/html/store/" >'../sftp/store'
-printf "%s" "mput ./store2/* /var/www/html/store/" >'../sftp/store2'
+printf "%s" "mput ./store/* /var/www/html/store/" >'../sftp/store/'
+printf "%s" "mput ./store2/* /var/www/html/store/" >'../sftp/store2/'
 printf "%s" "mput index.html /var/www/html/index.html" >'../sftp/index.html'
 
 #printf "%s" "put -r $5 $6" >$TEMP_SFTP_FILE
