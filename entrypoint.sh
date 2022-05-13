@@ -62,6 +62,11 @@ sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVAT
 printf "%s" "put Dockerfile /var/www/api/Dockerfile" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
+printf "%s" "put server.php /var/www/api/server.php" >$TEMP_SFTP_FILE
+sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
+
+php artisan migrate
+
 
 #printf "%s" "put -r $5 $6" >$TEMP_SFTP_FILE
 #-o StrictHostKeyChecking=no avoid Host key verification failed.
