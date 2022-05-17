@@ -23,10 +23,10 @@ fi
 echo 'sftp start'
 # create a temporary file containing sftp commands
 
-printf "%s" "mput -R /app/* /var/www/api/app/" >$TEMP_SFTP_FILE
+printf "%s" "mput -R app /var/www/api/app/" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput -R /bootstrap/* /var/www/api/bootstrap/" >$TEMP_SFTP_FILE 
+printf "%s" "mput -R bootstrap /var/www/api/bootstrap/" >$TEMP_SFTP_FILE 
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
 printf "%s" "mput -R /config/* /var/www/api/config/" >$TEMP_SFTP_FILE
