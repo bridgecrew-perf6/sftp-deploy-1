@@ -23,46 +23,46 @@ fi
 echo 'sftp start'
 # create a temporary file containing sftp commands
 
-printf "%s" "put ./app/* ./var/www/api/app/*" >$TEMP_SFTP_FILE
+printf "%s" "mput ./app/* ./var/www/api/app/" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "put ./bootstrap/* ./var/www/api/bootstrap/*" >$TEMP_SFTP_FILE 
+printf "%s" "mput ./bootstrap/* ./var/www/api/bootstrap/" >$TEMP_SFTP_FILE 
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "put ./config/* /var/www/api/config/*" >$TEMP_SFTP_FILE
+printf "%s" "mput ./config/* /var/www/api/config/" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "put ./database/* /var/www/api/database/*" >$TEMP_SFTP_FILE
+printf "%s" "mput ./database/* /var/www/api/database/" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "put ./development_files/* /var/www/api/development_files/*" >$TEMP_SFTP_FILE
+printf "%s" "mput ./development_files/* /var/www/api/development_files/" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "put ./public/* /var/www/api/public/*" >$TEMP_SFTP_FILE
+printf "%s" "mput ./public/* /var/www/api/public/" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "put ./resources/* /var/www/api/resources/*" >$TEMP_SFTP_FILE
+printf "%s" "mput ./resources/* /var/www/api/resources/" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "put ./routes/* /var/www/api/routes/*" >$TEMP_SFTP_FILE
+printf "%s" "mput ./routes/* /var/www/api/routes/" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "put ./tests/* /var/www/api/tests/*" >$TEMP_SFTP_FILE
+printf "%s" "mput ./tests/* /var/www/api/tests/" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "put composer.json /var/www/api/composer.json" >$TEMP_SFTP_FILE
+printf "%s" "mput composer.json /var/www/api/composer.json" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "put composer.lock /var/www/api/composer.lock" >$TEMP_SFTP_FILE
+printf "%s" "mput composer.lock /var/www/api/composer.lock" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "put docker-compose.yml /var/www/api/docker-compose.yml" >$TEMP_SFTP_FILE
+printf "%s" "mput docker-compose.yml /var/www/api/docker-compose.yml" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "put Dockerfile /var/www/api/Dockerfile" >$TEMP_SFTP_FILE
+printf "%s" "mput Dockerfile /var/www/api/Dockerfile" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "put server.php /var/www/api/server.php" >$TEMP_SFTP_FILE
+printf "%s" "mput server.php /var/www/api/server.php" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
 printf "php artisan migrate"
