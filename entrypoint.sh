@@ -23,31 +23,31 @@ fi
 echo 'sftp start'
 # create a temporary file containing sftp commands
 
-printf "%s" "mput /app/* ./var/www/api/app/" >$TEMP_SFTP_FILE
+printf "%s" "mput -R /app/* ./var/www/api/app/" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput /bootstrap/* ./var/www/api/bootstrap/" >$TEMP_SFTP_FILE 
+printf "%s" "mput -R /bootstrap/* ./var/www/api/bootstrap/" >$TEMP_SFTP_FILE 
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput /config/* /var/www/api/config/" >$TEMP_SFTP_FILE
+printf "%s" "mput -R /config/* /var/www/api/config/" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput /database/* /var/www/api/database/" >$TEMP_SFTP_FILE
+printf "%s" "mput -R /database/* /var/www/api/database/" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput /development_files/* /var/www/api/development_files/" >$TEMP_SFTP_FILE
+printf "%s" "mput -R /development_files/* /var/www/api/development_files/" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput /public/* /var/www/api/public/" >$TEMP_SFTP_FILE
+printf "%s" "mput -R /public/* /var/www/api/public/" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput /resources/* /var/www/api/resources/" >$TEMP_SFTP_FILE
+printf "%s" "mput -R /resources/* /var/www/api/resources/" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput /routes/* /var/www/api/routes/" >$TEMP_SFTP_FILE
+printf "%s" "mput -R /routes/* /var/www/api/routes/" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput /tests/* /var/www/api/tests/" >$TEMP_SFTP_FILE
+printf "%s" "mput -R /tests/* /var/www/api/tests/" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
 printf "%s" "mput composer.json /var/www/api/composer.json" >$TEMP_SFTP_FILE
