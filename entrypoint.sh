@@ -23,46 +23,46 @@ fi
 echo 'sftp start'
 # create a temporary file containing sftp commands
 
-printf "%s" "mput -R app /var/www/api/app/" >$TEMP_SFTP_FILE
+printf "%s" "mput -R app $6" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput -R bootstrap /var/www/api/bootstrap/" >$TEMP_SFTP_FILE 
+printf "%s" "mput -R bootstrap $6" >$TEMP_SFTP_FILE 
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput -R config /var/www/api/config/" >$TEMP_SFTP_FILE
+printf "%s" "mput -R config $6" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput -R database /var/www/api/database/" >$TEMP_SFTP_FILE
+printf "%s" "mput -R database $6" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput -R development_files /var/www/api/development_files/" >$TEMP_SFTP_FILE
+printf "%s" "mput -R development_files $6" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput -R public /var/www/api/public/" >$TEMP_SFTP_FILE
+printf "%s" "mput -R public $6" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput -R resources /var/www/api/resources/" >$TEMP_SFTP_FILE
+printf "%s" "mput -R resources $6" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput -R routes /var/www/api/routes/" >$TEMP_SFTP_FILE
+printf "%s" "mput -R routes $6" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput -R tests /var/www/api/tests/" >$TEMP_SFTP_FILE
+printf "%s" "mput -R tests $6" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput composer.json /var/www/api/composer.json" >$TEMP_SFTP_FILE
+printf "%s" "mput composer.json $6" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput composer.lock /var/www/api/composer.lock" >$TEMP_SFTP_FILE
+printf "%s" "mput composer.lock $6" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput docker-compose.yml /var/www/api/docker-compose.yml" >$TEMP_SFTP_FILE
+printf "%s" "mput docker-compose.yml $6" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput Dockerfile /var/www/api/Dockerfile" >$TEMP_SFTP_FILE
+printf "%s" "mput Dockerfile $6" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
-printf "%s" "mput server.php /var/www/api/server.php" >$TEMP_SFTP_FILE
+printf "%s" "mput server.php $6" >$TEMP_SFTP_FILE
 sftp -b $TEMP_SFTP_FILE -P $3 $8 -o StrictHostKeyChecking=no -i $TEMP_SSH_PRIVATE_KEY_FILE $1@$2
 
 printf "php artisan migrate"
